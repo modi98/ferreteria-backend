@@ -21,6 +21,10 @@ const clientSchema = new Schema({
   direction: {
     type: String,
     required: true
+  },
+  rfc: {
+    type: String,
+    required: true
   }
 }, {
   timestamps: true,
@@ -40,6 +44,7 @@ clientSchema.methods = {
       email: this.email,
       phone: this.phone,
       direction: this.direction,
+      rfc: this.rfc,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

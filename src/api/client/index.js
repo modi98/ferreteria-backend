@@ -7,7 +7,7 @@ import { schema } from './model'
 export Client, { schema } from './model'
 
 const router = new Router()
-const { name, email, phone, direction } = schema.tree
+const { name, email, phone, direction, rfc } = schema.tree
 
 /**
  * @api {post} /clients Create client
@@ -26,7 +26,7 @@ const { name, email, phone, direction } = schema.tree
  */
 router.post('/',
   token({ required: true }),
-  body({ name, email, phone, direction }),
+  body({ name, email, phone, direction, rfc }),
   create)
 
 /**
@@ -77,7 +77,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ name, email, phone, direction }),
+  body({ name, email, phone, direction, rfc }),
   update)
 
 /**
