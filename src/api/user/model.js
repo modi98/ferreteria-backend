@@ -66,7 +66,7 @@ userSchema.pre('save', function (next) {
 userSchema.methods = {
   view (full) {
     let view = {}
-    let fields = ['id', 'name', 'picture']
+    let fields = ['id', 'name', 'role', 'picture', 'email', 'createdAt']
 
     if (full) {
       fields = [...fields, 'email', 'createdAt']
